@@ -7,7 +7,7 @@ const Music = (props,{navigation}) => {
 })*/
     
   return (
-    <TouchableOpacity onPress={()=>navigation.navigate('Details')}>
+    <TouchableOpacity onPress={()=>props.navigation.navigate('Details')}>
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: props.item.artworkUrl100 }} />
         <Text style={styles.title}> {props.item.trackName} </Text>

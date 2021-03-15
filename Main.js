@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import ReactNaitve from "react-native";
+import {useState,useEffect} from "react";
 import {View,FlatList,ImageBackground,StyleSheet,} from "react-native";
 import Music from "./Music.js";
 import { Musicdata } from "./Musicapi";
@@ -28,7 +30,7 @@ const Main = ({navigation}) => {
         data={music.results}
         keyExtractor={(item) => item.key}
         renderItem={({ item }) => {
-          return <Music item={item} />;
+          return <Music item={item} navigation={navigation} />;
         }}
       />
     </View>
