@@ -1,20 +1,21 @@
 import React,{useCallback} from "react";
 import { View, StyleSheet, Text, Image,Button, TouchableOpacity,Alert } from "react-native";
-
-const Music = ({ item,navigation }) => {
-const navigateToDetailScreen = useCallback(() => {
+import Details from './details';
+const Music = (props,{navigation}) => {
+/*const navigateToDetailScreen = useCallback(() => {
     navigation.navigate("Details");
-    }, [item]);
+})*/
     
   return (
+    <TouchableOpacity onPress={()=>navigation.navigate('Details')}>
     <View style={styles.container}>
-      <TouchableOpacity onPress={navigateToDetailScreen}>
-      <Image style={styles.image} source={{ uri: item.artworkUrl100 }} />
-        <Text style={styles.title}> {item.trackName} </Text>
-        <Text style={styles.author}> {item.artistName} </Text>
-      <Text style={styles.rd}> {item.releaseDate}</Text>
-    </TouchableOpacity>
+      <Image style={styles.image} source={{ uri: props.item.artworkUrl100 }} />
+        <Text style={styles.title}> {props.item.trackName} </Text>
+        <Text style={styles.author}> {props.item.artistName} </Text>
+      <Text style={styles.rd}> {props.item.releaseDate}</Text>
+   
     </View>
+    </TouchableOpacity>
   );
 };
 

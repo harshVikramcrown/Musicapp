@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {View,FlatList,ImageBackground,StyleSheet,} from "react-native";
-import Music from "./Music";
+import Music from "./Music.js";
 import { Musicdata } from "./Musicapi";
 import Details from './details';
 const Main = ({navigation}) => {
