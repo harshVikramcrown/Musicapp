@@ -1,11 +1,14 @@
-import React from "react";
+import React,{useCallback} from "react";
 import { View, StyleSheet, Text, Image,Button, TouchableOpacity,Alert } from "react-native";
 
-const Music = ({ item }) => {
- 
+const Music = ({ item,navigation }) => {
+const navigateToDetailScreen = useCallback(() => {
+    navigation.navigate("Details");
+    }, [item]);
+    
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={navigateToDetailScreen}>
       <Image style={styles.image} source={{ uri: item.artworkUrl100 }} />
         <Text style={styles.title}> {item.trackName} </Text>
         <Text style={styles.author}> {item.artistName} </Text>

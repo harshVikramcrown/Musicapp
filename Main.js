@@ -2,22 +2,23 @@ import React, { useState, useEffect } from "react";
 import {View,FlatList,ImageBackground,StyleSheet,} from "react-native";
 import Music from "./Music";
 import { Musicdata } from "./Musicapi";
-
-const Main = () => {
+import Details from './details';
+const Main = ({navigation}) => {
   const [music, setMusic] = useState([]);
 
   useEffect(() => {
     getMusicFromAPI();
   }, []);
 
-  const getMusicFromAPI() {
-    Musicdata.get("search?term=Michael+jackson")
-      .then(async function (response) {
-        setMusic(response.data);
-      })
-      .catch(function (error) {
+  const getMusicFromAPI=async()=> {
+    try{
+      const response =await Musicdata.get("search?term=Michael+jackson")
+      return setMusic(response.data)
+        ;
+      }
+      catch (error) {
         console.log(error);
-      });
+      };
   }
 
   return (
