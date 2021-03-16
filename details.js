@@ -1,25 +1,13 @@
 import React from 'react';
 import{View,Text,StyleSheet,Button} from 'react-native';
-const Details=({navigation})=>{
+import Main from './Main';
+const Details=(route,navigation,item)=>{
+    const {param}=route.params;
     return(
-        <View>
-              <Text>Hello</Text>
-              <Button title="Click to go Back"
-    style={styles.inp}
-    onPress= {()=>navigation.navigate("Main")}
-    />
+        <View style={{marginTop:300}}>
+             <Text>{param.item.trackName}</Text>
+             <Text>{param.item.trackName}</Text>
         </View>
     )
 }
-const styles= StyleSheet.create({
-    inp:{
-        position:"absolute",
-        width: 200,
-        height: 44,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: 'black',
-        marginBottom: 10,
-      },
-    });
 export default Details;

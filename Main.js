@@ -1,10 +1,8 @@
 import React from "react";
-import ReactNaitve from "react-native";
 import {useState,useEffect} from "react";
 import {View,FlatList,ImageBackground,StyleSheet,} from "react-native";
 import Music from "./Music.js";
 import { Musicdata } from "./Musicapi";
-import Details from './details';
 const Main = ({navigation}) => {
   const [music, setMusic] = useState([]);
 
@@ -19,7 +17,7 @@ const Main = ({navigation}) => {
         ;
       }
       catch (error) {
-        console.log(error);
+        console.warn(error);
       };
   }
 

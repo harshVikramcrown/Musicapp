@@ -1,23 +1,22 @@
 import React,{useCallback} from "react";
 import { View, StyleSheet, Text, Image,Button, TouchableOpacity,Alert } from "react-native";
 import Details from './details';
-const Music = (props,{navigation}) => {
-/*const navigateToDetailScreen = useCallback(() => {
-    navigation.navigate("Details");
-})*/
-    
+const Music = (props) => {
+const navigateToDetailScreen = useCallback(() => {
+  props.navigation.navigate('Details' , {param: music.results,
+  });
+});
   return (
-    <TouchableOpacity onPress={()=>props.navigation.navigate('Details')}>
+    <TouchableOpacity onPress={navigateToDetailScreen}>
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: props.item.artworkUrl100 }} />
         <Text style={styles.title}> {props.item.trackName} </Text>
         <Text style={styles.author}> {props.item.artistName} </Text>
       <Text style={styles.rd}> {props.item.releaseDate}</Text>
-   
-    </View>
+     </View>
     </TouchableOpacity>
   );
-};
+  };
 
 const styles = StyleSheet.create({
    
