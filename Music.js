@@ -2,9 +2,10 @@ import React,{useCallback} from "react";
 import { View, StyleSheet, Text, Image,Button, TouchableOpacity,Alert } from "react-native";
 import Details from './details';
 const Music = (props) => {
-const navigateToDetailScreen = useCallback(() => {
-  props.navigation.navigate('Details' , {param: music.results,
-  });
+const navigateToDetailScreen = useCallback((item) => {
+  props.navigation.navigate('Details' , {param: props.result},
+  [item]
+);
 });
   return (
     <TouchableOpacity onPress={navigateToDetailScreen}>

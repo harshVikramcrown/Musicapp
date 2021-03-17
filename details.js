@@ -1,12 +1,12 @@
 import React from 'react';
 import{View,Text,StyleSheet,Button} from 'react-native';
 import Main from './Main';
-const Details=(route,navigation,item)=>{
-    const {param}=route.params;
+const Details=(item,props,route,key,navigation)=>{
+ const param=route.params.key;
+    //console.warn(param.trackName);
     return(
         <View style={{marginTop:300}}>
-             <Text>{param.item.trackName}</Text>
-             <Text>{param.item.trackName}</Text>
+             <Text>{trackName}</Text>
         </View>
     )
 }
