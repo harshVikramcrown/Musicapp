@@ -12,8 +12,9 @@ const RootStack = createStackNavigator();
     <NavigationContainer>
            <RootStack.Navigator headerMode="none">
               <RootStack.Screen name="Main" component={Main}/>
-              <RootStack.Screen name="Details" component={Details} />
               <RootStack.Screen name="Music" component={Music}/>
+              <RootStack.Screen name="Details" component={Details} />
+             
           </RootStack.Navigator>
           </NavigationContainer>
   );

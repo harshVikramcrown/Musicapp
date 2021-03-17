@@ -2,10 +2,10 @@ import React,{useCallback} from "react";
 import { View, StyleSheet, Text, Image,Button, TouchableOpacity,Alert } from "react-native";
 import Details from './details';
 const Music = (props) => {
-const navigateToDetailScreen = useCallback((item) => {
-  props.navigation.navigate('Details' , {param: props.result},
-  [item]
-);
+const navigateToDetailScreen= useCallback((item) => {
+  props.navigation.navigate('Details' , {param: props.item
+  },
+  [item]);
 });
   return (
     <TouchableOpacity onPress={navigateToDetailScreen}>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     //Button:
     backgroundColor: "white",
     margin: 15,
-    opacity:0.7
+    opacity:0.5
   },
   title: {
     fontSize: 20,
